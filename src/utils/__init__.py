@@ -1,0 +1,1 @@
+from src.utils.test_functions import rosenbrock_fun, ackley_fun
