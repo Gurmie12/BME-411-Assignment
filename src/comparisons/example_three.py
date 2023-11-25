@@ -10,11 +10,10 @@ BEST_SWARM_PARAMS = {
     'iters': 50
 }
 
-# TODO: Update then run
 BEST_SA_PARAMS = {
     'iters': 5000,
-    'step_size': 20,
-    'temp': 100
+    'step_size': 0.3,
+    'temp': 5
 }
 
 costs_min_bound = 0.01

@@ -29,7 +29,11 @@ class SimulatedAnnealing:
                     pos_0.append(np.random.choice(data_loader.ind_data[d], size=1)[0])
             else:
                 if not is_model:
-                    pos_0.append(np.random.randint(low=self.min_bounds[d], high=self.max_bounds[d] + 1, size=1)[0])
+                    if d < 2:
+                        values = np.logspace(start=self.min_bounds[d], stop=self.max_bounds[d], num=50)
+                        pos_0.append(np.random.choice(values, size=1)[0])
+                    else:
+                        pos_0.append(np.random.uniform(low=self.min_bounds[d], high=self.max_bounds[d], size=1)[0])
                 else:
                     pos_0.append(np.random.uniform(low=self.min_bounds[d], high=self.max_bounds[d], size=1)[0])
         if discrete:
